@@ -112,3 +112,5 @@ export default class Store {
     return val
   }
 }
+
+window.Store = Store

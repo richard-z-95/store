@@ -6,9 +6,9 @@ Object.defineProperty(exports, "__esModule", {
 
 var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
-var _util = require('./util');
+var _index = require('./utils/index');
 
-var _error = require('./error');
+var _error = require('./utils/error');
 
 var _objectAssign = require('object-assign');
 
@@ -81,9 +81,9 @@ var Store = function () {
         if (Array.isArray(oldVal)) {
           // 如果是数组 把新值添加进去
           doUpdate(k, oldVal.concat(v));
-        } else if ((0, _util.isObject)(oldVal)) {
+        } else if ((0, _index.isObject)(oldVal)) {
           // 如果是对象 合并
-          if (!(0, _util.isObject)(v)) throw new Error(_error.errorMapping.UPDATE_TYPE_MISMATCH);
+          if (!(0, _index.isObject)(v)) throw new Error(_error.errorMapping.UPDATE_TYPE_MISMATCH);
           (0, _objectAssign2.default)(oldVal, v);
           doUpdate(k, oldVal);
         } else if (typeof oldVal === 'boolean') {
@@ -153,7 +153,7 @@ var Store = function () {
     key: '_each',
     value: function _each(list, callback) {
       var _callback = callback.bind(this);
-      (0, _util.each)(list, _callback);
+      (0, _index.each)(list, _callback);
     }
     // 序列化
 
@@ -182,3 +182,6 @@ var Store = function () {
 }();
 
 exports.default = Store;
+
+
+window.Store = Store;
