@@ -1,22 +1,6 @@
 {
   "presets": [
-    [
-      "env",
-      {
-        "modules": false
-      }
-    ],
-    "es2015",
-    "stage-0"
-  ],
-  "env": {
-    "test": {
-      "plugins": [
-        [
-          "istanbul"
-        ]
-      ]
-    }
-  }
+    "es2015"
+  ]
 }
 
