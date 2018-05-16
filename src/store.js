@@ -1,5 +1,5 @@
-import { isObject, each } from './util'
-import { errorMapping } from './error'
+import { isObject, each } from './utils/index'
+import { errorMapping } from './utils/error'
 import objectAssign from 'object-assign'
 export default class Store {
   constructor () {
