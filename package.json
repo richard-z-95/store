@@ -1,20 +1,29 @@
 {
   "name": "store",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "description": "localStorage的简单封装",
   "main": "release/store.js",
   "scripts": {
     "build": "babel src -d release",
-    "test": "mocha --compilers js:babel-register; babel test/tests.js -o test/test.js"
+    "karma": "karma start"
   },
   "devDependencies": {
     "babel-core": "^6.26.3",
+    "babel-loader": "^7.1.4",
     "babel-preset-env": "^1.7.0",
     "babel-preset-es2015": "^6.24.1",
     "babel-preset-stage-0": "^6.24.1",
-    "babel-register": "^6.26.0",
-    "chai": "^4.1.2",
-    "mocha": "^5.1.1"
+    "cross-env": "^5.1.5",
+    "jasmine-core": "^3.1.0",
+    "karma": "^2.0.2",
+    "karma-chrome-launcher": "^2.2.0",
+    "karma-coverage": "^1.1.2",
+    "karma-jasmine": "^1.1.2",
+    "karma-phantomjs-launcher": "^1.0.4",
+    "karma-webpack": "2.0.1",
+    "phantom": "^4.0.12",
+    "phantomjs": "^2.1.7",
+    "webpack": "2.2.0"
   },
   "repository": {
     "type": "git",
