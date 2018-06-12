@@ -23,7 +23,7 @@
     "karma-webpack": "2.0.1",
     "phantom": "^4.0.12",
     "phantomjs": "^2.1.7",
-    "webpack": "2.2.0"
+    "webpack": "^4.2.0"
   },
   "repository": {
     "type": "git",
