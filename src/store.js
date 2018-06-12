@@ -15,7 +15,12 @@ export default class Store {
     if (!k) {
       throw new Error(errorMapping.INVALID_PARAMETERS)
     }
-    store.setItem(k, _serialize(v))
+    try {
+      store.setItem(k, _serialize(v))
+    } catch (error) {
+      return false
+    }
+    return true
   }
   get (k) {
     let { store, _deserialize } = this
@@ -38,27 +43,29 @@ export default class Store {
     let oldVal = _get(k)
     // 需要根据实际存储在localStorage中的转化为字符串形式的值判断之前是否存储过
     if (oldValStr) {
+      let success = false
       // 之前有值 则执行更新方法
       // 判断之前存储值的类型
       if (Array.isArray(oldVal)) {
         // 如果是数组 把新值添加进去
-        doUpdate(k, oldVal.concat(v))
+        success = doUpdate(k, oldVal.concat(v))
       } else if (isObject(oldVal)) {
         // 如果是对象 合并
         if (!isObject(v)) throw new Error(errorMapping.UPDATE_TYPE_MISMATCH)
         objectAssign(oldVal, v)
-        doUpdate(k, oldVal)
+        success = doUpdate(k, oldVal)
       } else if (typeof oldVal === 'boolean') {
         // 如果是布尔类型的值 则替换掉旧值
         if (typeof v !== 'boolean') throw new Error(errorMapping.UPDATE_TYPE_MISMATCH)
-        doUpdate(k, v)
+        success = doUpdate(k, v)
       } else {
         // 如果是字符串 拼接
-        doUpdate(k, oldVal + v)
+        success = doUpdate(k, oldVal + v)
       }
+      return success
     } else {
       // 否则直接存储
-      _set(k, v)
+      return _set(k, v)
     }
   }
   // 删除某个
@@ -87,7 +94,7 @@ export default class Store {
     let _exist = exist.bind(this)
     // exist(k)返回的是存储的字符串类型的值 不通过封装的get方法取 为了避免取出值为false的 导致抛出异常
     if (_exist(k)) {
-      _set(k, v)
+      return _set(k, v)
     } else {
       throw new Error(errorMapping.KEY_NOT_EXISTED)
     }
