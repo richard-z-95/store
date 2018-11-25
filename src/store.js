@@ -114,7 +114,7 @@ export default class Store {
     try {
       val = JSON.parse(strVal)
     } catch (error) {
-      val = null
+      val = strVal
     }
     return val
   }
