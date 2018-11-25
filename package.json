@@ -1,6 +1,6 @@
 {
   "name": "store",
-  "version": "0.0.4",
+  "version": "0.0.5",
   "description": "localStorage的简单封装",
   "main": "release/store.js",
   "scripts": {
@@ -8,6 +8,7 @@
     "karma": "karma start"
   },
   "devDependencies": {
+    "babel-cli": "^6.26.0",
     "babel-core": "^6.26.3",
     "babel-loader": "^7.1.4",
     "babel-preset-env": "^1.7.0",
@@ -23,7 +24,8 @@
     "karma-webpack": "2.0.1",
     "phantom": "^4.0.12",
     "phantomjs": "^2.1.7",
-    "webpack": "^4.2.0"
+    "webpack": "^4.26.0",
+    "webpack-cli": "^3.1.2"
   },
   "repository": {
     "type": "git",
