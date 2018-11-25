@@ -4,7 +4,7 @@
   "description": "localStorage的简单封装",
   "main": "release/store.js",
   "scripts": {
-    "build": "babel src -d release",
+    "build": "webpack src/store.js -p",
     "karma": "karma start"
   },
   "devDependencies": {
