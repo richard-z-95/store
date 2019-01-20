@@ -1,8 +1,8 @@
 {
-  "name": "store",
+  "name": "web-storage-json",
   "version": "0.0.5",
   "description": "localStorage的简单封装",
-  "main": "release/store.js",
+  "main": "dist/store.js",
   "scripts": {
     "build": "webpack src/store.js -p",
     "karma": "karma start"
