@@ -1,6 +1,6 @@
 {
   "name": "web-storage-json",
-  "version": "0.0.6",
+  "version": "0.0.7",
   "description": "localStorage的简单封装",
   "main": "dist/store.js",
   "scripts": {
