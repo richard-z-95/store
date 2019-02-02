@@ -1,5 +1,5 @@
 # web-storage-json
-
+![](https://img.shields.io/npm/dm/web-storage-json.svg?style=flat?branch=master) ![](https://img.shields.io/npm/v/web-storage-json.svg?style=flat) ![](https://img.shields.io/npm/l/web-storage-json.svg?style=flat?branch=master)
 ## Introduction
   formatted JSON based on localStorage
 
