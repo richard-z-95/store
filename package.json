@@ -1,7 +1,7 @@
 {
   "name": "web-storage-json",
-  "version": "0.0.9",
-  "description": "localStorage的简单封装",
+  "version": "1.0.0",
+  "description": "formatted JSON based on localStorage",
   "main": "dist/store.js",
   "scripts": {
     "build": "webpack src/store.js -p",
