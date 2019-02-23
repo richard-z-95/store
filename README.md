@@ -11,7 +11,7 @@ npm i web-storage-json
 ## Usage
 ### create instance
 ``` javascript
-// create new instance
+import 'Store' from 'web-storage-json'
 const store = new Store()
 ```
 ### store.set & store.get
