@@ -2,10 +2,16 @@ import { isObject, each } from './utils/index'
 import { errorMapping } from './utils/error'
 import objectAssign from 'object-assign'
 export default class Store {
-  constructor () {
-    let localStorage = window.localStorage
-    if (localStorage) {
-      this.store = localStorage
+  constructor (options) {
+    this.options = objectAssign({}, options)
+    let storage = null
+    if (this.options.use === 'sessionStorage') {
+      storage = window.sessionStorage
+    } else {
+      storage = window.localStorage
+    }
+    if (storage) {
+      this.store = storage
     } else {
       throw new Error(errorMapping.LOCALSTOREAGE_NOT_SUPPORTED)
     }
