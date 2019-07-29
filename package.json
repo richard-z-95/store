@@ -32,7 +32,8 @@
     "url": "git+https://github.com/IRONGit/store.git"
   },
   "keywords": [
-    "localStorage"
+    "localStorage",
+    "sessionStorage"
   ],
   "author": "Zkid",
   "license": "MIT",
