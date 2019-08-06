@@ -5,14 +5,21 @@
 
 ## Installation
 ```javascript
-npm i web-storage-json
+npm i web-storage-json --save-dev
 ```
 
 ## Usage
 ### create instance
 ``` javascript
-import 'Store' from 'web-storage-json'
-const store = new Store()
+import Store from 'web-storage-json'
+
+// use localStorage
+const localStore = new Store()
+
+// use sessionStorage
+const sessionStore = new Store({
+  use: 'sessionStorage'
+})
 ```
 ### store.set & store.get
 ``` javascript
