@@ -36,6 +36,9 @@
     "localStorage",
     "sessionStorage"
   ],
+  "files": [
+    "dist"
+  ],
   "author": "Zkid",
   "license": "MIT",
   "bugs": {
